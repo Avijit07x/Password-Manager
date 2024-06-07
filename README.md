@@ -66,4 +66,4 @@ We welcome contributions to improve PassOp. To contribute, follow these steps:
 5. Open a pull request with a detailed description of your changes.
  
 ## Demo
-You can view a live demo of the project [here](https://your-deployed-site-url.com).
+You can view a live demo of the project [Password-Manager](https://password-manager-seven-ecru.vercel.app/).
