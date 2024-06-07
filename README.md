@@ -1,12 +1,13 @@
 # PassOp
 
 ## Description
-PassOp is a simple password manager built using React and Tailwind CSS. It allows users to store their site credentials (site name, username, and password) securely in the browser's local storage.
+PassOp is a simple password manager built using React and Tailwind CSS. It allows users to store their site credentials (site name, username, and password) in the browser's local storage.
 
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Contributing](#contributing)
+
 
 ## Installation
 To set up the development environment, follow these steps:
@@ -17,15 +18,23 @@ To set up the development environment, follow these steps:
     cd Password-Manager
     ```
 
-2. Install dependencies:
+2. Install dependencies using npm:
     ```bash
     npm install
+    ```
+
+3. Or, install dependencies using bun:
+    ```bash
     bun install
     ```
 
-3. Start the development server:
+4. Start the development server using npm:
     ```bash
     npm run dev
+    ```
+
+5. Or, start the development server using bun:
+    ```bash
     bun dev
     ```
 
