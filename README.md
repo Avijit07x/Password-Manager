@@ -7,6 +7,7 @@ PassOp is a simple password manager built using React and Tailwind CSS. It allow
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Contributing](#contributing)
+4. [Demo](#demo)
 
 
 ## Installation
@@ -63,4 +64,6 @@ We welcome contributions to improve PassOp. To contribute, follow these steps:
     git push origin feature-branch
     ```
 5. Open a pull request with a detailed description of your changes.
-
+ 
+## Demo
+You can view a live demo of the project [here](https://your-deployed-site-url.com).
