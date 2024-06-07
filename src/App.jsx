@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
 	return (
-		<div className="bg-[#f1fcf4]">
+		<div className="bg-[#f1fcf4] min-h-screen">
 			<ToastContainer
 				position="top-right"
 				autoClose={3000}
