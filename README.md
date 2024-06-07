@@ -7,31 +7,32 @@ PassOp is a simple password manager built using React and Tailwind CSS. It allow
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Contributing](#contributing)
-4. [License](#license)
 
 ## Installation
 To set up the development environment, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/passop.git
-    cd passop
+    git clone https://github.com/Avijit07x/Password-Manager.git
+    cd Password-Manager
     ```
 
 2. Install dependencies:
     ```bash
     npm install
+    bun install
     ```
 
 3. Start the development server:
     ```bash
-    npm start
+    npm run dev
+    bun dev
     ```
 
 ## Usage
 After setting up the project, you can start using PassOp:
 
-1. Open the application in your browser (usually at `http://localhost:3000`).
+1. Open the application in your browser (usually at `http://localhost:5173`).
 2. Enter the site name, username, and password in the provided input fields.
 3. Click on the "Submit" button to save the credentials to local storage.
 4. You can view and manage your saved passwords directly from the application interface.
@@ -53,7 +54,4 @@ We welcome contributions to improve PassOp. To contribute, follow these steps:
     git push origin feature-branch
     ```
 5. Open a pull request with a detailed description of your changes.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
