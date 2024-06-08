@@ -85,3 +85,7 @@ We welcome contributions to improve PassOp. To contribute, follow these steps:
 ## Demo
 
 You can view a live demo of the project [Here](https://password-manager-seven-ecru.vercel.app/).
+
+## Screenshots
+![image](https://github.com/Avijit07x/Password-Manager/assets/154034057/4f1dcc47-7d8e-4166-a6ce-2bfeb95ddb53)
+
