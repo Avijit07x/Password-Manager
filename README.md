@@ -89,3 +89,5 @@ You can view a live demo of the project [Here](https://password-manager-seven-ec
 ## Screenshots
 ![image](https://github.com/Avijit07x/Password-Manager/assets/154034057/4f1dcc47-7d8e-4166-a6ce-2bfeb95ddb53)
 
+![screencapture-password-manager-seven-ecru-vercel-app-2024-06-08-07_30_15](https://github.com/Avijit07x/Password-Manager/assets/154034057/3ab95c92-e478-476c-983a-45adac5b7ed1)
+![screencapture-password-manager-seven-ecru-vercel-app-2024-06-08-07_30_15](https://github.com/Avijit07x/Password-Manager/assets/154034057/3ab95c92-e478-476c-983a-45adac5b7ed1)
