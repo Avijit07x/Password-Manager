@@ -10,6 +10,7 @@ PassOp is a simple password manager built using React and Tailwind CSS. It allow
 2. [Usage](#usage)
 3. [Contributing](#contributing)
 4. [Demo](#demo)
+5. [Screenshots](#screenshots)
 
 ## Installation
 
@@ -85,3 +86,11 @@ We welcome contributions to improve PassOp. To contribute, follow these steps:
 ## Demo
 
 You can view a live demo of the project [Here](https://password-manager-seven-ecru.vercel.app/).
+
+## Screenshots
+![image](https://github.com/Avijit07x/Password-Manager/assets/154034057/4f1dcc47-7d8e-4166-a6ce-2bfeb95ddb53)
+
+![screencapture-password-manager-seven-ecru-vercel-app-2024-06-08-07_30_15](https://github.com/Avijit07x/Password-Manager/assets/154034057/3ab95c92-e478-476c-983a-45adac5b7ed1)
+![screencapture-password-manager-seven-ecru-vercel-app-2024-06-08-07_35_49](https://github.com/Avijit07x/Password-Manager/assets/154034057/a8d63f64-b093-477c-94b9-57ec1525aeee)
+
+
