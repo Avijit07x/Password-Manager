@@ -1,9 +1,10 @@
-import { CirclePlus, Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import PasswordTable from "./PasswordTable";
-import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
+import { v4 as uuidv4 } from "uuid";
+import { decryptPassword, encryptPassword } from "../utils/HashPassword";
+import PasswordTable from "./PasswordTable";
 
 const Hero = () => {
 	const {
@@ -25,9 +26,21 @@ const Hero = () => {
 
 	// add password
 	const onSubmit = (data) => {
-		const newData = [{ ...data, id: uuidv4() }, ...passwords];
-		setPasswords(newData);
-		localStorage.setItem("password", JSON.stringify(newData));
+		const hashedData = [
+			{
+				url: data.url,
+				username: data.username,
+				password: encryptPassword(data.password),
+				id: uuidv4(),
+			},
+			...passwords,
+		];
+		if (data) {
+			const encryptedPassword = encryptPassword(data.password);
+		}
+
+		setPasswords(hashedData);
+		localStorage.setItem("password", JSON.stringify(hashedData));
 		toast.success("Password saved successfully", {
 			position: "top-right",
 			autoClose: 2000,
@@ -68,10 +81,11 @@ const Hero = () => {
 		const filteredPasswords = passwords.filter((item) => item.id !== id);
 		setPasswords(filteredPasswords);
 		const passwordToEdit = passwords.find((item) => item.id === id);
+		const decryptedPassword = decryptPassword(passwordToEdit.password);
 		if (passwordToEdit) {
 			setValue("url", passwordToEdit.url);
 			setValue("username", passwordToEdit.username);
-			setValue("password", passwordToEdit.password);
+			setValue("password", decryptedPassword);
 		}
 	};
 
@@ -154,6 +168,7 @@ const Hero = () => {
 					passwords={passwords}
 					deletePassword={deletePassword}
 					editPassword={editPassword}
+					setPasswords={setPasswords}
 				/>
 			)}
 		</div>

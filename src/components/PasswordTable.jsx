@@ -1,7 +1,17 @@
-import { Copy, Pencil, Trash } from "lucide-react";
+import { Copy, Eye, EyeOff, Pencil, Trash } from "lucide-react";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import { decryptPassword, encryptPassword } from "../utils/HashPassword";
 
-const PasswordTable = ({ passwords, deletePassword, editPassword }) => {
+const PasswordTable = ({
+	passwords,
+	deletePassword,
+	editPassword,
+	setPasswords,
+}) => {
+	// Update togglePassword to be an object that stores the toggle state for each password by ID
+	const [togglePassword, setTogglePassword] = useState({});
+
 	const copyText = (text) => {
 		if (navigator.clipboard) {
 			navigator.clipboard.writeText(text);
@@ -28,8 +38,38 @@ const PasswordTable = ({ passwords, deletePassword, editPassword }) => {
 			});
 		}
 	};
+
+	const handleTogglePassword = (id) => {
+		setTogglePassword((prevState) => ({
+			...prevState,
+			[id]: !prevState[id],
+		}));
+
+		const findPassword = passwords.find((item) => item.id === id);
+
+		if (findPassword) {
+
+			const decryptedPassword = decryptPassword(findPassword.password);
+			const encryptedPassword = encryptPassword(findPassword.password);
+
+			if (!togglePassword[id]) {
+				setPasswords((prevState) =>
+					prevState.map((item) =>
+						item.id === id ? { ...item, password: decryptedPassword } : item
+					)
+				);
+			} else {
+				setPasswords((prevState) =>
+					prevState.map((item) =>
+						item.id === id ? { ...item, password: encryptedPassword } : item
+					)
+				);
+			}
+		}
+	};
+
 	return (
-		<div className="relative overflow-x-auto min-w-full lg:px-24">
+		<div className="relative overflow-x-auto select-none min-w-full lg:px-24">
 			<table className="w-full  text-sm text-left rtl:text-right ">
 				<thead className="text-base text-gray-700 uppercase ">
 					<tr>
@@ -75,17 +115,20 @@ const PasswordTable = ({ passwords, deletePassword, editPassword }) => {
 									</div>
 								</td>
 								<td className="px-6 py-4">
-									<div className="flex gap-1 ">
+									<div className="flex gap-1">
 										<input
-											className="bg-transparent outline-none max-w-[100px] "
-											type="password"
+											className="bg-transparent outline-none max-w-[100px]"
+											type={togglePassword[item.id] ? "text" : "password"}
 											value={item.password}
 											readOnly
 										/>
-										<Copy
-											className="cursor-pointer"
-											onClick={() => copyText(item.password)}
-										/>
+										<button onClick={() => handleTogglePassword(item.id)}>
+											{togglePassword[item.id] ? (
+												<Eye className="cursor-pointer" />
+											) : (
+												<EyeOff className="cursor-pointer" />
+											)}
+										</button>
 									</div>
 								</td>
 								<td className="px-6 py-4">
